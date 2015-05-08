@@ -10,10 +10,10 @@ namespace makeup1.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        DbSet<photos> potosbyusers { get; set; }
-        DbSet<Like> likes { get; set; }
-        DbSet<Followers> userFollowers { get; set; }
-        DbSet<Hashtag> hashtagging { get; set; }
+        DbSet<Photo> Photos { get; set; }
+        DbSet<Like> Likes { get; set; }
+        DbSet<Follower> Followers { get; set; }
+        DbSet<Hashtag> Hashtags { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection")

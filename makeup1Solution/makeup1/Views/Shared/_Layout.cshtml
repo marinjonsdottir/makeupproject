@@ -1,38 +1,47 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" type="text/css" href="Main.css" />
+    <link href="~/Content/Main.css" rel="stylesheet" />
+</head>
+
+<body>
     
     <div class="logo">
-        <a href='@Url.Action("Index", "Home")'> 
-        <img id="logo" src="http://i296.photobucket.com/albums/mm180/marinjonsdottir2/logo_zpsr2yatmf8.jpg" alt="makeup logo" />
+        <a href='@Url.Action("Index", "Home")'>
+            <img id="logo" src="http://i296.photobucket.com/albums/mm180/marinjonsdottir2/logo_zpsr2yatmf8.jpg" alt="makeup logo" />
         </a>
-</div>
+    </div>
 
-</head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>               
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Heim", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Um síðuna", "About", "Home")</li>
-                </ul>
-            </div>
+    <div class="navbar-inverse navbar-fixed-top>
+        <div class=" container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Heim", "Index", "Home")</li>
+                <li>@Html.ActionLink("Um síðuna", "About", "Home")</li>
+                @if(Request.IsAuthenticated)
+                {
+                     <li>@Html.ActionLink("Förðunarfræðingar", "Index", "Home")</li>
+                     <li>@Html.ActionLink("Tilboð", "Index", "Home")</li>
+                   
+                }
+            </ul>
+            @if(Request.IsAuthenticated) {
+                <input type="text" class="form-control pull-right search-box" placeholder="Leita.."/>
+            }
+        </div>
+    </div>
     </div>
     <div class="container body-content">
         @RenderBody()
