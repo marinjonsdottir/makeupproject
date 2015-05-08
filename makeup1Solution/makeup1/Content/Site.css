@@ -9,25 +9,6 @@
     padding-right: 15px;
 
 }
-.logo
-{
-    padding-left: 40%
-}
-#logo
-{
-    height: 300px;
-    width: 300px;
-}
-form
-{
-   padding-left: 50% 
-   margin: 2cm 4cm 3cm 4cm;
-
-}
-h2
-{
-    text-align: center;
-}
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
