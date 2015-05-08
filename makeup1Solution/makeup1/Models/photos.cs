@@ -5,7 +5,7 @@ using System.Web;
 
 namespace makeup1.Models
 {
-    public class photos
+    public class Photo
     {
         public int ID { get; set; }
         public string photo { get; set; }
