@@ -10,5 +10,6 @@ namespace makeup1.Repositories
     public interface IPhotoRepository
     {
         IEnumerable<Photo> GetAllPhotos();
+        void Add(Photo photo);
     }
 }

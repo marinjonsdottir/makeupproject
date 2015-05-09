@@ -18,12 +18,29 @@ namespace makeup1.Controllers
             photoRepository = new PhotoRepository();
         }
 
+        // Test constructor, takes a repository as argument.
         public PhotoController(IPhotoRepository photoRepo)
         {
             photoRepository = photoRepo;
         }
 
-        //
+        public ActionResult MyProfile(int Id)  //er haegt at tengja thennan vid MyProfile i HomeController
+        {
+            var model = (from p in photoRepository.GetAllPhotos()
+                         where p.ID == Id
+                         select p).First();
+
+            return View(model);
+        }
+
+      /*  [HttpPost]
+        public ActionResult AddPhoto(//HVAD A AD KOMA INN HER!!!!!?)
+        {
+
+             
+        }  */
+
+
         // GET: /Photo/
         public ActionResult Index()
         {
