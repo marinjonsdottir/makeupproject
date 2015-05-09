@@ -30,11 +30,12 @@
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Heim", "Index", "Home")</li>
                 <li>@Html.ActionLink("Um síðuna", "About", "Home")</li>
-                @if(Request.IsAuthenticated)
+                @if (Request.IsAuthenticated)
                 {
+                    <li>@Html.ActionLink("Mín síða", "MyProfile", "Home")</li>
                     <li>@Html.ActionLink("Tilboð", "Offer", "Home")</li>
-                     <li>@Html.ActionLink("Förðunarfræðingar", "Artist", "Home")</li>
-                     <li>@Html.ActionLink("Mín síða", "MyProfile", "Home")</li>    
+                    <li>@Html.ActionLink("Förðunarfræðingar", "Artist", "Home")</li>
+
                 }
             </ul>
             @if(Request.IsAuthenticated) {
