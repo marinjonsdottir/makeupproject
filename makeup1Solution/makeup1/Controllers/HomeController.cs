@@ -32,5 +32,20 @@ namespace makeup1.Controllers
 
             return View();
         }
+
+        public ActionResult Artist()
+        {
+            return View();
+        }
+
+        public ActionResult Offer()
+        {
+            return View();
+        }
+
+        public ActionResult MyProfile()
+        {
+            return View();
+        }
     }
 }

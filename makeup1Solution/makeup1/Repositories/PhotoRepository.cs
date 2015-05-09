@@ -12,6 +12,7 @@ namespace makeup1.Repositories
 
         public IEnumerable<Photo> GetAllPhotos() 
         {
+           
             return null;
         }
     }

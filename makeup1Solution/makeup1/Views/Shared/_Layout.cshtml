@@ -32,9 +32,9 @@
                 <li>@Html.ActionLink("Um síðuna", "About", "Home")</li>
                 @if(Request.IsAuthenticated)
                 {
-                     <li>@Html.ActionLink("Förðunarfræðingar", "Index", "Home")</li>
-                     <li>@Html.ActionLink("Tilboð", "Index", "Home")</li>
-                   
+                    <li>@Html.ActionLink("Tilboð", "Offer", "Home")</li>
+                     <li>@Html.ActionLink("Förðunarfræðingar", "Artist", "Home")</li>
+                     <li>@Html.ActionLink("Mín síða", "MyProfile", "Home")</li>    
                 }
             </ul>
             @if(Request.IsAuthenticated) {
