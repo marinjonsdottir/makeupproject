@@ -15,10 +15,14 @@ namespace makeup1.Repositories
             return db.Photos;
         }
 
-        public void Add(Photo photo) //a thetta ad vera photo eda tharf ad vera string?
+        public bool Add(Photo photo)
         {
+
             db.Photos.Add(photo);
-            db.SaveChanges();  //Tharf ad vera e-d meira her?
+
+            db.SaveChanges();  
+
+            return true;
         }
 
         //her getum vid verid med delete ef vid viljum

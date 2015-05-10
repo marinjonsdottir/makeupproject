@@ -9,6 +9,6 @@ namespace makeup1.Models
     {
         public int ID { get; set; }
         public string FollowerName { get; set; }
-        public int FollowerUserId { get; set; }
+        public string FollowerUserId { get; set; }
     }
 }
