@@ -10,7 +10,13 @@
 </head>
 
 <body>
-    
+    @if (Request.IsAuthenticated)
+    {
+         <div class="login">
+           @Html.Partial("_LoginPartial")
+         </div>
+    }
+
     <div class="logo">
         <a href='@Url.Action("Index", "Home")'>
             <img id="logo" src="http://i296.photobucket.com/albums/mm180/marinjonsdottir2/logo_zpsr2yatmf8.jpg" alt="makeup logo" />

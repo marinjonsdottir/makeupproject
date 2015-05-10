@@ -1,17 +1,17 @@
 ﻿body {
 }
-.logo
+.logo a
 {
-    padding-left: 40%
+    display: block;
+    margin: auto;
+    width: 300px;        
+
 }
+
 #logo
 {
     height: 300px;
     width: 300px;
-}
-form
-{
-    padding-left: 50%
 }
 
 h1
@@ -48,4 +48,77 @@ IMG.displayed
     margin-right:100px; 
     padding-left:100px;
     padding-right:100px; 
+}
+
+.artist
+{
+    width: 50%;
+    margin: 20px auto;
+    
+}
+
+.artist .image
+{
+    width: 50%;
+    float: left;
+    display: inline-block;
+    height: 250px;
+    overflow:hidden;
+}
+
+.artist .info
+{
+   display: inline-block;
+   height:250px;
+   padding: 20px;
+   width: 50%;
+
+}
+
+.artist .image img
+{
+    max-width: 100%;
+}
+
+h2
+{
+    text-align: center; 
+}
+
+@media (max-width:750px)
+{
+
+.artist
+{
+    width: 100%;
+    
+}
+} 
+
+.login{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+#loginForm{
+    margin: auto;
+    width: 50%;
+}
+
+.about p
+{
+
+}
+
+.imgsize
+{
+     height: 300px;
+     width: 750px;
+}
+
+.imgsize2
+{
+    height: 50px; 
+    width: 100px; 
 }
