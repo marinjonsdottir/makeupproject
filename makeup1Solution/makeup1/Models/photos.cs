@@ -22,5 +22,7 @@ namespace makeup1.Models
         public string UserId { get; set; }
         public string Caption { get; set; }
         public DateTime DateCreated { get; set; }
+        [ForeignKey("HashtagPhotoId")]
+        public List<Hashtag> hashTags { get; set; }
     }
 }

@@ -48,13 +48,16 @@
             @if (Request.IsAuthenticated)
 {
     <form action="/" method="post">
-        <input type="text" class="form-control pull-right search-box" placeholder="Leita.." />
+        <input type="text" class="form-control pull-right search-box" placeholder="Leita.." id="searchBox" />
     </form>
 }
         </div>
     </div>
     </div>
     <div class="container body-content">
+        <div id="searchResults">
+
+        </div>
         @RenderBody()
         <hr />
         <footer>
@@ -64,6 +67,10 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
     @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/MakupScript.js/Script.js"></script>
+
 </body>
 </html>

@@ -6,20 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using makeup1.Repositories;
+using makeup1.Models;
+using makeup1.ViewModels;
 
 namespace makeup1.Controllers
 {
     public class SearchController : Controller
     {
-        public ActionResult search(string query)
+        public JsonResult SearchForUser(string query)
         {
-			Debug.WriteLine("query: " + query);
-			
-			var model = from u in UserRepository.GetAllUsers()
-                        where u.UserName.Contains(query)
-                        select u;
-
-            return View(model);
+            UserRepository rep = new UserRepository();
+            List<UserViewModel> users = rep.Search(query);
+            return Json(users, JsonRequestBehavior.AllowGet);
         }
         // GET: /Search/
         public ActionResult Index()
