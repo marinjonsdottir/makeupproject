@@ -175,6 +175,8 @@
     <Compile Include="Repositories\IPhotoRepository.cs" />
     <Compile Include="Repositories\PhotoRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\PhotoViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -227,7 +229,6 @@
     <Content Include="Views\Home\Offer.cshtml" />
     <Content Include="Views\Home\Artist.cshtml" />
     <Content Include="Views\Home\MyProfile.cshtml" />
-    <Content Include="Views\Photo\ViddiMethod.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

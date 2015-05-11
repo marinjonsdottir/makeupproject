@@ -17,7 +17,6 @@ namespace makeup1.Repositories
 
         public bool Add(Photo photo)
         {
-
             db.Photos.Add(photo);
 
             db.SaveChanges();  

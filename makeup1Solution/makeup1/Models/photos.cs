@@ -14,15 +14,13 @@ namespace makeup1.Models
             this.photoUrl = url;
             this.Caption = caption;
             this.UserId = user;
-            String time = "07062001";
-            this.DateCreated = time;
-            //var fjule = System.DateTime.Now;
+            this.DateCreated = System.DateTime.Now;
         }
 
         public int ID { get; set; }
         public string photoUrl { get; set; }
         public string UserId { get; set; }
         public string Caption { get; set; }
-        public string DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
     }
 }

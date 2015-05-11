@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using makeup1.Models;
 using makeup1.Repositories;
+using Microsoft.AspNet.Identity;
 
 namespace makeup1.Controllers
 {
@@ -26,7 +27,7 @@ namespace makeup1.Controllers
 
             
 
-        public ActionResult MyProfile(int Id)  //er haegt at tengja thennan vid MyProfile i HomeController
+        public ActionResult MyProfile(int Id)
         {
             var model = (from p in photoRepository.GetAllPhotos()
                          where p.ID == Id
@@ -35,17 +36,16 @@ namespace makeup1.Controllers
             return View(model);
         }
 
-    /*    [HttpPost]
-        public int AddPhoto(string photoUrl, string comment)
+        [HttpPost]
+        public ActionResult AddPhoto(string photoUrl, string comment)
         {
             // test if parameters are correct
+            string userId = User.Identity.GetUserId();
 
-            var username = "testuser";
-            //var username1 = HttpContext.User;
-            var model = photoRepository.Add(new Photo(photoUrl,comment,username));
+            var model = photoRepository.Add(new Photo(photoUrl,comment,userId));
 
             return RedirectToAction("MyProfile", "Home");
-        } */
+        } 
 
 
         // GET: /Photo/
