@@ -10,9 +10,10 @@ namespace makeup1.Repositories
     {
         ApplicationDbContext db = new ApplicationDbContext();
 
-        public IEnumerable<Photo> GetAllPhotos() 
+        public IEnumerable<Photo> GetAllPhotos
         {
-            return db.Photos;
+            get { return db.Photos; }
+            set { }
         }
 
         public bool Add(Photo photo)
