@@ -20,6 +20,8 @@ namespace makeup1.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Linq.IQueryable<ApplicationUser> UserName { get; set; }
     }
 
 }
