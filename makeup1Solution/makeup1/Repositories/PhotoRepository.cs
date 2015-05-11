@@ -10,15 +10,19 @@ namespace makeup1.Repositories
     {
         ApplicationDbContext db = new ApplicationDbContext();
 
-        public IEnumerable<Photo> GetAllPhotos() 
+        public IEnumerable<Photo> GetAllPhotos
         {
-            return db.Photos;
+            get { return db.Photos; }
+            set { }
         }
 
-        public void Add(Photo photo) //a thetta ad vera photo eda tharf ad vera string?
+        public bool Add(Photo photo)
         {
             db.Photos.Add(photo);
-            db.SaveChanges();  //Tharf ad vera e-d meira her?
+
+            db.SaveChanges();  
+
+            return true;
         }
 
         //her getum vid verid med delete ef vid viljum

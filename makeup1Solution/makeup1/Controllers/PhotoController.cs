@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using makeup1.Models;
 using makeup1.Repositories;
+using Microsoft.AspNet.Identity;
+//using makeup1.ViewModels;
 
 namespace makeup1.Controllers
 {
@@ -12,6 +14,8 @@ namespace makeup1.Controllers
     {
         // Hann ætti að hafa photo repository 
         IPhotoRepository photoRepository;
+        //PhotoRepository repo = new PhotoRepository();
+
 
         public PhotoController()
         {
@@ -24,40 +28,53 @@ namespace makeup1.Controllers
             photoRepository = photoRepo;
         }
 
-        public ActionResult MyProfile(int Id)  //er haegt at tengja thennan vid MyProfile i HomeController
+            
+        //The parameter is the user id, then we will find all
+        //photos with the same user id
+        public ActionResult MyProfile()
         {
-            var model = (from p in photoRepository.GetAllPhotos()
-                         where p.ID == Id
-                         select p).First();
+            //PhotoViewModel viewModel = new PhotoViewModel();
 
+            string userId = User.Identity.GetUserId();
+            
+            var model = (from p in photoRepository.GetAllPhotos
+                         where p.UserId == userId
+                         select p);
+            
+            
+           // Console.WriteLine(viewModel);
             return View(model);
         }
 
-      /*  [HttpPost]
-        public ActionResult AddPhoto(//HVAD A AD KOMA INN HER!!!!!?)
+        [HttpPost]
+        public ActionResult AddPhoto(string photoUrl, string comment)
         {
+            // test if parameters are correct
+            string userId = User.Identity.GetUserId();
+            var p = new Photo { photoUrl = photoUrl, Caption = comment , DateCreated = DateTime.Now, UserId = userId };
+            photoRepository.Add(p);
+           // var model = photoRepository.Add(new Photo(photoUrl,comment,userId));
 
-             
-        }  */
+            return RedirectToAction("MyProfile", "Home");
+        } 
 
 
         // GET: /Photo/
+        /*
         public ActionResult Index()
         {
             List<Photo> mockPhotos = new List<Photo>();
 
-            Photo photo1 = new Photo();
+            Photo photo1 = new Photo("http://www.pictures4cool.com/media/images/picture-wallpaper.jpg");
             photo1.ID = 0;
-            photo1.photo = "http://www.pictures4cool.com/media/images/picture-wallpaper.jpg";
-
-            Photo photo2 = new Photo();
+            
+            Photo photo2 = new Photo("http://globe-views.com/dcim/dreams/photo/photo-06.jpg");
             photo2.ID = 1;
-            photo2.photo = "http://globe-views.com/dcim/dreams/photo/photo-06.jpg";
-
+           
             mockPhotos.Add(photo1);
             mockPhotos.Add(photo2);
 
             return View(mockPhotos);
-        }
+        }*/
 	}
 }

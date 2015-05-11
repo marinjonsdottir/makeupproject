@@ -175,6 +175,8 @@
     <Compile Include="Repositories\IPhotoRepository.cs" />
     <Compile Include="Repositories\PhotoRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\PhotoViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -194,6 +196,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MakupScript.js\Script.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -225,7 +228,7 @@
     <Content Include="Views\Photo\Index.cshtml" />
     <Content Include="Views\Home\Offer.cshtml" />
     <Content Include="Views\Home\Artist.cshtml" />
-    <Content Include="Views\Home\MyProfile.cshtml" />
+    <Content Include="Views\Photo\MyProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
