@@ -1,7 +1,10 @@
-﻿using System;
+﻿using makeup1.Repositories;
+using makeup1.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 using System.Web.Mvc;
 
 namespace makeup1.Controllers
@@ -11,7 +14,12 @@ namespace makeup1.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            PhotoRepository repo = new PhotoRepository();
+            string user = User.Identity.GetUserName();
+
+            NewsFeedViewModel model = new NewsFeedViewModel();
+            model.photo = repo.GetFollowersPhotos(user);
+            return View(model);
         }
 
         public ActionResult Hallo()

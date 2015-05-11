@@ -21,4 +21,18 @@ namespace makeup1.ViewModels
 
       //  public List<Hashtag> Hashtags { get; set; }
     }
+
+    public class UsersAccount
+    {
+        public List<Photo> photos { get; set; }
+        public string username { get; set; }
+        public bool isFollowing { get; set; }
+    }
+
+    public class UploadModel 
+    {
+        public string imageUrl { get; set; }
+        public string hash { get; set; }
+        public string userid { get; set; }
+    }
 }

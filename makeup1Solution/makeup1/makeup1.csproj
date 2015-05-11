@@ -178,6 +178,7 @@
     <Compile Include="Repositories\PhotoRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\NewsFeedViewModel.cs" />
     <Compile Include="ViewModels\PhotoViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
   </ItemGroup>

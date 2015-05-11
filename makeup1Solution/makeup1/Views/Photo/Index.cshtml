@@ -1,4 +1,4 @@
-﻿@model IEnumerable<makeup1.Models.Photo>
+﻿@model makeup1.ViewModels.NewsFeedViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -7,10 +7,11 @@
 <h2>Photos</h2>
 
 <div class="row">
-    @foreach (var p in Model)
+    @foreach (var p in Model.photo)
     {
         <div class="col-md-4">
-            <div style="display:block; background: url(@p.photo); background-size: cover; background-repeat no-repeat; background-position 50% 50%; max-width 100%; height 200px;" class="photo-wrapper"></div>
+            <img src="@p"/>
+            @*<div style="display:block; background: url(@p); background-size: cover; background-repeat no-repeat; background-position 50% 50%; max-width 100%; height 200px;" class="photo-wrapper"></div>*@
         </div>
     }
 </div>

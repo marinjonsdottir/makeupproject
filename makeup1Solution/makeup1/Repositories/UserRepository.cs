@@ -28,5 +28,10 @@ namespace makeup1.Repositories
             user.ForEach(a => usersToReturn.Add(new UserViewModel(a)));
             return usersToReturn;
         }
+
+        internal bool IsFollowing(string user, string username)
+        {
+            return db.Followers.FirstOrDefault(a => a.FollowerName == user && a.FollowerUserId == username) != null;
+        }
     }
 }
