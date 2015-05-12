@@ -69,8 +69,8 @@ function UnFollowUser() {
 function UploadImage() {
     var data = {
         imageUrl: $("#imageUrl").val(),
-        hash: $("#imageHash").val()
-        //Send caption to controller
+        hash: $("#imageHash").val(),
+        caption: $("#imageCaption").val()
     };
     $.ajax('/Photo/Upload', {
         type: 'Post',

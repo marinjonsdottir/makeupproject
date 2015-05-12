@@ -32,6 +32,7 @@ namespace makeup1.ViewModels
     public class UploadModel 
     {
         public string imageUrl { get; set; }
+        public string caption { get; set; }
         public string hash { get; set; }
         public string userid { get; set; }
     }
