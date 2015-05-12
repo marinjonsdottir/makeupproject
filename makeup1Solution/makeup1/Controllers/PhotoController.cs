@@ -56,8 +56,6 @@ namespace makeup1.Controllers
             ApplicationUser user = userRep.GetUserByUsername(id);
             string loggedInUser = User.Identity.GetUserName();
 
-
-
             PhotoRepository rep = new PhotoRepository();
 
             UsersAccount model = new UsersAccount();
