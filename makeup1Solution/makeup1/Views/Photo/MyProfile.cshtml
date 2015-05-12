@@ -19,11 +19,19 @@
     }
     else
     {
+        <div class="artist">
+            <img src="http://www.genengnews.com/app_themes/genconnect/images/default_profile.jpg" />
+
+            <button id="camera"><img style="height: 100px;"src="http://i12.photobucket.com/albums/a229/heiddisskoli/11256417_10153295265094399_1163077171_n_zpsi2phzowr.jpg" /></button>
+
+        </div>
         <div class="uploadContainer">
-            <input placeholder="ImageUrl" class="input-sm" id="imageUrl"/>
-            <input placeholder="Hash tags" class="input-sm" id="imageHash"/>
+            <input placeholder="Slóð á mynd" class="input-sm" id="imageUrl"/>
+            <input placeholder="Titill" class="input-sm" id="imageCaption" />
+            <input placeholder="Hash tags" class="input-sm" id="imageHash"/>   
             <input type="button" class="btn btn-primary" value="Upload" onclick="UploadImage()"/>
         </div>
+            
         
     }
 </div>
@@ -31,6 +39,8 @@
 <div>
     @foreach (var photo in Model.photos)
     {
-        <img src="@photo.photoUrl" />
+        <div class="minsida">
+            <img src="@photo.photoUrl"/>
+        </div>
     }
 </div>

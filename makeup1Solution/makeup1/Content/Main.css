@@ -117,3 +117,28 @@ h2
     height: 50px; 
     width: 100px; 
 }
+.minsida 
+{
+    width: 100%;
+    display: block;
+    height: auto;
+    margin-left: 10%;
+}
+.minsida > img
+{
+    float:left;
+    width: 300px;
+    height: 300px;
+    margin: 5px 5px;
+}
+.foot
+{
+    display: block;
+    width: 100%;
+}
+#camera {
+    border: none;
+    padding: 0px;
+    margin-top: 20px;
+}
+

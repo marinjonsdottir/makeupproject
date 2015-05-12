@@ -92,7 +92,7 @@ namespace makeup1.Repositories
                 Photo ph = new Photo()
                 {
                     photoUrl = model.imageUrl,
-                    Caption = "",
+                    Caption = model.caption,
                     DateCreated = DateTime.Now,
                     UserId = model.userid,
                     hashTags = tags
