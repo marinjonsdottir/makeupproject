@@ -36,6 +36,21 @@ namespace makeup1.Controllers
             return View();
         }
 
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        public IQueryable<ApplicationUser> GetAllUsers()
+        {
+            return db.UserName;
+        }
+
+        public ApplicationUser GetUserByName(string name)
+        {
+            var result = (from item in db.UserName
+                          where item.UserName == name
+                          select item).SingleOrDefault();
+            return result;
+        }
+
         //
         // POST: /Account/Login
         [HttpPost]
@@ -80,7 +95,6 @@ namespace makeup1.Controllers
             {
                 var user = new ApplicationUser() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user, model.Password);
-
                 if (result.Succeeded)
                 {
                     await SignInAsync(user, isPersistent: false);
@@ -91,6 +105,7 @@ namespace makeup1.Controllers
                     AddErrors(result);
                 }
             }
+
             // If we got this far, something failed, redisplay form
             return View(model);
         }
